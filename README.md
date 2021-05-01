@@ -1,4 +1,4 @@
-# web_note
+# Vanilo Javascript Clone Coding Project
 Clone Coding Project : Todo List website
 
 
