@@ -7,8 +7,8 @@ const TODOS_LS = "toDos";
 
 function filterFn(toDo){
     return toDo.id===1;
-
 }
+
 let toDos=[];
 
 function deleteToDo(event){
@@ -25,7 +25,7 @@ function deleteToDo(event){
 }
 
 function saveToDos() {
-    localStorage.setItem(TODOS_LS,JSON.stringify(toDos)); // 
+    localStorage.setItem(TODOS_LS,JSON.stringify(toDos)); //
 }
 
 function paintToDo(text){
@@ -40,6 +40,7 @@ function paintToDo(text){
  li.appendChild(delBtn);
  li.id=newId;
  toDoList.appendChild(li);
+
  const toDoObj={
      text:text,
      id:newId
@@ -62,15 +63,17 @@ function something(toDo){
 function loadToDos(){
     const loadedToDos = localStorage.getItem(TODOS_LS);
 
-    if (toDos !== null){
+    if (toDos !== null)
+    {
+      if (loadedToDos !== null) {
         console.log(loadedToDos )
         const parsedToDos = JSON.parse(loadedToDos);
         parsedToDos.forEach(function(toDo) {
             paintToDo(toDo.text);
         });
 
-
-    } 
+      }
+    }
 }
 function init() {
     loadToDos();
@@ -78,6 +81,3 @@ function init() {
 }
 
 init();
-
-
-
